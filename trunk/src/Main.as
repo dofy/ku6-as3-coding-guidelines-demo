@@ -1,3 +1,12 @@
+/**
+ * Ku6 AS3 编码规范 代码范例
+ * 规范相关代码以 //# 注释标注
+ * 
+ * @version 0.0.2
+ * @author Seven Yu
+ * @since 2011.02.24
+ * @copy (C) 2011 ku6.com
+ */
 package
 {
     //# 先引入 flash 类, 同包下的类按字母排序
@@ -16,20 +25,18 @@ package
     import com.ku6.utils.Tools;
     import com.ku6.utils.Tools;
 
+    
     /**
-     * Ku6 AS3 编码规范 演示项目
-     * 规范相关代码以 //# 注释标注
-     * @version 0.0.1
+     * 传说中的文档类, 一般都继承自 Sprite
      * @author Seven Yu
-     * @copy 2011 ku6.com
      */
     public class Main extends Sprite
     {
 
         // 所有按键常量
-        private const KEY_UP:uint    = 38;
-        private const KEY_DOWN:uint  = 40;
-        private const KEY_LEFT:uint  = 37;
+        private const KEY_UP:uint = 38;
+        private const KEY_DOWN:uint = 40;
+        private const KEY_LEFT:uint = 37;
         private const KEY_RIGHT:uint = 39;
 
         private const KEY_W:uint = 87; // 对应上
@@ -49,6 +56,15 @@ package
         private var ball:Ball;
         private var rect:Rect;
 
+        //# object 的定义
+        private var obj1:Object = 
+        { 
+            key1: 'value1', 
+            key2: true 
+        };
+            
+        private var obj2:Object = { name: 'Object 2', version: '0.0.1' };
+
 
         //# 变量定义区与逻辑代码区可多空几行
 
@@ -66,14 +82,15 @@ package
                 addEventListener(Event.ADDED_TO_STAGE, init);
             }
 
-        /*
-           //# 若此处使用三元操作符, 可以写成:
-           stage ?
-           init() :
-           addEventListener(Event.ADDED_TO_STAGE, init);
-
-           //# 注意换行的三元操作符的格式
-         */
+            /*
+            //# 若此处使用三元操作符, 可以写成:
+            
+            stage ?
+                init() :
+                addEventListener(Event.ADDED_TO_STAGE, init);
+                
+            //# 注意换行的三元操作符的格式
+            */
         }
 
         /**
