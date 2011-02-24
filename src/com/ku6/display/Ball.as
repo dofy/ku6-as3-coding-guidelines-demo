@@ -17,6 +17,10 @@ package com.ku6.display
         private const BALL_RADIUS:uint = 30; // 球体半径
 
         private const MOTION_TIME:Number = 1.2; // 动画时长
+        
+        // 原始坐标, 保持目标坐标的累加
+        private var oldX:Number = 0;
+        private var oldY:Number = 0;
 
 
         public function Ball()
@@ -43,8 +47,10 @@ package com.ku6.display
          */
         public function moveTo(x:Number, y:Number):void
         {
-            this.x = x;
-            this.y = y;
+            TweenLite.killTweensOf(this);
+            
+            this.x = oldX = x;
+            this.y = oldY = y;
         }
 
         /**
@@ -55,7 +61,9 @@ package com.ku6.display
          */
         public function moveBy(x:Number, y:Number):void
         {
-            TweenLite.to(this, MOTION_TIME, {x: this.x + x, y: this.y + y});
+            oldX += x;
+            oldY += y;
+            TweenLite.to(this, MOTION_TIME, { x: oldX, y: oldY } );
         }
     }
 
