@@ -5,6 +5,7 @@
  * @version 0.0.2
  * @author Seven Yu
  * @since 2011.02.24
+ * @uri http://code.google.com/p/ku6-as3-coding-guidelines-demo/
  * @copy (C) 2011 ku6.com
  */
 package

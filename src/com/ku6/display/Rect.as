@@ -12,6 +12,7 @@ package com.ku6.display
         private const RECT_COLOR:uint = 0x0000ff; // 矩形填充颜色
         private const RECT_LENGTH:uint = 60; // 矩形变长
 
+        //# getter 和 setter 对应的私有变量也统一放在变量定义区
         private var _color:uint = RECT_COLOR; // 矩形颜色属性
 
 
